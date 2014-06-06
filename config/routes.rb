@@ -1,7 +1,7 @@
 Kpoperos::Application.routes.draw do
   devise_for :users
   get "concurso", to: 'static_pages#concurso'
-  get "conferencias", to: 'static_pages#conferencias'
+  get "info", to: 'static_pages#info'
   get "home", to: 'static_pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
