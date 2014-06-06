@@ -1,5 +1,6 @@
 Kpoperos::Application.routes.draw do
  
+  get "dashboard/home"
   get "home", to: 'static_pages#home'
   get "about", to: 'static_pages#about'
   get "contest", to: 'static_pages#contest'
