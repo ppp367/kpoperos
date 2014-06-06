@@ -1,4 +1,5 @@
 Kpoperos::Application.routes.draw do
+  devise_for :users
   get "concurso", to: 'static_pages#concurso'
   get "conferencias", to: 'static_pages#conferencias'
   get "home", to: 'static_pages#home'
