@@ -6,8 +6,23 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get conferencias" do
-    get :conferencias
+  test "should get about" do
+    get :about
+    assert_response :success
+  end
+
+  test "should get contest" do
+    get :contest
+    assert_response :success
+  end
+
+  test "should get prices" do
+    get :prices
+    assert_response :success
+  end
+
+  test "should get contact" do
+    get :contact
     assert_response :success
   end
 
