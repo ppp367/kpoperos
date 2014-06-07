@@ -5,7 +5,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 	validates :username, :presence => true, :uniqueness => true
+end
+
+
+class Concursante < User
+
+	self.inheritance_column = :type
 
 	extend FriendlyId
 	friendly_id :username, use: :slugged
+
 end
