@@ -1,0 +1,3 @@
+<li><%= link_to "English", :locale=>'en'%></li>
+<li><%= link_to "Español", :locale=>'es'%></li>
+<li><%= link_to "한국어", :locale=>'ko'%></li>
