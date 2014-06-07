@@ -24,7 +24,7 @@ git checkout -b nombre-de-la-branch
 ```
 Cada cambio que realicen deben hacer un commit nuevo
 ```
-git acc . --all
+git add . --all
 ```
 ```
 git commit -m "Descripcion sobre lo que se hizo"
