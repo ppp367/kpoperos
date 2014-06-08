@@ -2,8 +2,48 @@
 <h1>Dashboard#home</h1>
 <p>Find me in app/views/dashboard/home.html.erb</p>
 
-<ul>
-  <% @users.each do |user| %>
-    <li><%= link_to user.username, user_path(user.username)  %> | <%= user.email %> | <%= user.role %></li>
-  <% end %>
-</ul>
+<div class="well span12">
+	<h3>Todos los usuarios</h3>
+	<ul>
+	  <% @users.each do |user| %>
+	    <li><%= user.username %> | <%= user.email %> | <%= user.class.name %> </li>
+	  <% end %>
+	</ul>
+</div>
+
+<div class="well span5">
+	<h3>Todos los Invitados</h3>
+	<ul>
+	  <% @users.each do |user| %>
+	  	<% if user.type == nil %>
+	    <li><%= user.username %> | <%= user.email %> | <%= user.class.name %> </li>
+	    <% end %>
+	  <% end %>
+	</ul>
+</div>
+
+<div class="well span5">
+	<h3>Todos los Concursantes</h3>
+	<ul>
+	  <% @users.each do |user| %>
+	    <% if user.type == "Concursante" %>
+	    	<li><%= user.username %> | <%= user.email %> | <%= user.class.name %> </li>
+	    <% end %>
+	  <% end %>
+	</ul>
+</div>
+
+<div class="span12">
+	<% if current_user.type == "Concursante" %>
+		<h4>Eres Concursante!</h4>
+		<%= link_to "Tu perfil", "concursantes/#{current_user.username}" %>
+
+		<h4>Quieres salir del Concurso?</h4>
+		<%= button_to "Quiero salir al Concurso", {:controller => "users", action: "salir_concurso", id: current_user.id },
+	                                		method: :post, confirm: "¿Estás Seguro? Tu perfil se borrara and stuff" %>
+	<% else %>
+		<h4>¿Quieres entrar al Concurso?</h4>
+		<%= button_to "Quiero entrar al Concurso", {:controller => "users", action: "concursar", id: current_user.id },
+		                                		method: :post, confirm: "¿Estás Seguro?" %>
+	<% end %>
+</div>

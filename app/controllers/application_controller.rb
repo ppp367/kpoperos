@@ -17,11 +17,10 @@ class ApplicationController < ActionController::Base
 	 { :locale => I18n.locale }
 	end
 
-
   protected
 
   def configure_devise_permitted_parameters
-    registration_params = [:username, :email, :password, :password_confirmation , :role]
+    registration_params = [:username, :email, :password, :password_confirmation , :type]
 
     if params[:action] == 'update'
       devise_parameter_sanitizer.for(:account_update) { 

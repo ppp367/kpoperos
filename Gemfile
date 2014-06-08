@@ -51,6 +51,8 @@ end
 
 gem "twitter-bootstrap-rails"
 
+gem 'bootbox-rails'
+
 group :development, :test do
 gem 'foreman'
 end

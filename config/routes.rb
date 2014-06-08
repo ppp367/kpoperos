@@ -7,11 +7,14 @@ Kpoperos::Application.routes.draw do
   get "prices", to: 'static_pages#prices'
   get "contact", to: 'static_pages#contact'
 
-  get 'concursante/:id' => 'users#show'
-  #get ':id' => 'users#show'
+  #get "users/prueba"
+  get "/concursantes/:id" => 'users#show'
 
   devise_for :users
-  resources :users
+  resources :users, :concursantes
+
+  post "/concursar/:id", to: 'users#concursar'
+  post "/salir_concurso/:id", to: 'users#salir_concurso'
 
   authenticated :user do
     root :to => "dashboard#home", as: :user_root

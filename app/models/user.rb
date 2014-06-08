@@ -6,7 +6,13 @@ class User < ActiveRecord::Base
 
 	validates :username, :presence => true, :uniqueness => true
 
-	ROLES = %w[invitado concursante admin]
+	extend FriendlyId
+	friendly_id :username, use: :slugged
+end
+
+class Concursante < User
+
+	self.inheritance_column = :type
 
 	extend FriendlyId
 	friendly_id :username, use: :slugged

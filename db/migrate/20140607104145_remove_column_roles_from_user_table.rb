@@ -1,0 +1,9 @@
+class RemoveColumnRolesFromUserTable < ActiveRecord::Migration
+  def up
+    remove_column :users, :roles
+  end
+
+  def down
+    add_column :users, :roles, :string
+  end
+end
