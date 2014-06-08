@@ -14,6 +14,7 @@ Kpoperos::Application.routes.draw do
   resources :users, :concursantes
 
   post "/concursar/:id", to: 'users#concursar'
+  post "/salir_concurso/:id", to: 'users#salir_concurso'
 
   authenticated :user do
     root :to => "dashboard#home", as: :user_root

@@ -31,5 +31,12 @@ class UsersController < ApplicationController
     redirect_to home_path
   end
 
+  def salir_concurso
+    @user = User.friendly.find(params[:id])
+    @user= current_user.update_attribute(:type, nil)
+    flash[:notice] = "Haz salido del concurso"
+    redirect_to home_path
+  end
+
 end 
 
