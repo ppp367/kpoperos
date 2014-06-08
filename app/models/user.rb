@@ -5,8 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 	validates :username, :presence => true, :uniqueness => true
-end
 
+	extend FriendlyId
+	friendly_id :username, use: :slugged
+
+end
 
 class Concursante < User
 
@@ -14,5 +17,4 @@ class Concursante < User
 
 	extend FriendlyId
 	friendly_id :username, use: :slugged
-
 end
