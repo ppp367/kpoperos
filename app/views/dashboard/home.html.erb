@@ -7,3 +7,12 @@
     <li><%= user.username %> | <%= user.email %> </li>
   <% end %>
 </ul>
+
+<% if current_user.type == "Concursante" %>
+	<h4>Eres Concursante!</h4>
+	<%= link_to "Tu perfil", "concursantes/#{current_user.username}" %>
+<% else %>
+	<h4>¿Quieres entrar al Concurso?</h4>
+	<%= button_to "Quiero entrar al Concurso", {:controller => "users", action: "concursar", id: current_user.id },
+                                		method: :post, confirm: "¿Estás Seguro?" %>
+<% end %>

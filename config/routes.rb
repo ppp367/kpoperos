@@ -11,9 +11,9 @@ Kpoperos::Application.routes.draw do
   get "/concursantes/:id" => 'users#show'
 
   devise_for :users
-  resources :users
+  resources :users, :concursantes
 
-  get "/concursar/:id", to: 'users#concursar'
+  post "/concursar/:id", to: 'users#concursar'
 
   authenticated :user do
     root :to => "dashboard#home", as: :user_root
