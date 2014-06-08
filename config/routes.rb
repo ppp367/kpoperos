@@ -1,6 +1,5 @@
 Kpoperos::Application.routes.draw do
  
-  get "dashboard/home"
   get "home", to: 'static_pages#home'
   get "about", to: 'static_pages#about'
   get "contest", to: 'static_pages#contest'
@@ -13,11 +12,12 @@ Kpoperos::Application.routes.draw do
   devise_for :users
   resources :users, :concursantes
 
-  post "/concursar/:id", to: 'users#concursar'
-  post "/salir_concurso/:id", to: 'users#salir_concurso'
-
   authenticated :user do
     root :to => "dashboard#home", as: :user_root
+
+    get "dashboard/home"
+    post "/concursar/:id", to: 'users#concursar'
+    post "/salir_concurso/:id", to: 'users#salir_concurso'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
