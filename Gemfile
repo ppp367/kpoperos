@@ -5,7 +5,6 @@ ruby '2.0.0'
 gem 'rails', '4.0.4'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 
@@ -48,6 +47,7 @@ end
 group :development do
   gem "better_errors"
   gem 'foreman'
+  gem 'sqlite3'
 end
 
 gem "twitter-bootstrap-rails"
