@@ -81,7 +81,7 @@ Kpoperos::Application.configure do
   config.i18n.available_locales = :es , :en , :ko
 
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { :host => ENV['MAILER_HOST'] }
+  config.action_mailer.default_url_options = { :host => 'kpoperos.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default :charset => "utf-8"
