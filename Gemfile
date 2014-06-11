@@ -32,9 +32,9 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
 
-gem 'cancancan', '~> 1.8'
+#gem 'cancancan', '~> 1.8'
 
-gem 'activeadmin', github: 'gregbell/active_admin'
+#gem 'activeadmin', github: 'gregbell/active_admin'
 
 gem 'carrierwave'
 
@@ -47,15 +47,10 @@ end
 
 group :development do
   gem "better_errors"
+  gem 'foreman'
 end
 
 gem "twitter-bootstrap-rails"
-
-gem 'bootbox-rails'
-
-group :development, :test do
-gem 'foreman'
-end
 
 group :production do
   gem 'pg', '0.15.1'
