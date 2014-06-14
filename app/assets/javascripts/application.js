@@ -20,5 +20,5 @@
 //= require_tree .
 
 $(function(){
-  $('.dropdown-toggle').dropdown()
+
 });
