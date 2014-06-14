@@ -17,8 +17,9 @@
 //= require twitter/bootstrap/bootstrap-alert
 //= require twitter/bootstrap/bootstrap-button
 //= require twitter/bootstrap/bootstrap-collapse
+//= require bxslider
 //= require_tree .
 
-$(function(){
-
+$(document).ready(function(){
+  $('.bxslider').bxSlider();
 });
