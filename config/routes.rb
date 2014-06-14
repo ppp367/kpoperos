@@ -9,6 +9,8 @@ Kpoperos::Application.routes.draw do
   get "bandas/new", to: 'groups#new'
   #get "users/prueba"
   #get "/concursantes/:id" => 'users#show'
+  
+  get "bandas", to: 'groups#index'
 
   get "/bandas/:id" => 'groups#show'
 

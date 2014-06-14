@@ -1,0 +1,8 @@
+<% provide(:title, "Bandas") %>
+
+<h3>Todas las Bandas</h3>
+	<ul>
+	  <% @groups.each do |group| %>
+	    <li><%= group.name %> </li>
+	  <% end %>
+	</ul>
