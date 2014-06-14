@@ -44,6 +44,6 @@
 	<% else %>
 		<h4>¿Quieres entrar al Concurso?</h4>
 		<%= button_to "Quiero entrar al Concurso", {:controller => "users", action: "concursar", id: current_user.id },
-		                                		method: :post, confirm: "¿Estás Seguro?" %>
+		                                		method: :post %>
 	<% end %>
 </div>
