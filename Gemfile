@@ -50,7 +50,7 @@ group :development do
   gem 'sqlite3'
 end
 
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 group :production do
   gem 'pg', '0.15.1'

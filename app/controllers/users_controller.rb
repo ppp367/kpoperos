@@ -27,14 +27,14 @@ class UsersController < ApplicationController
   def concursar
     @user = User.friendly.find(params[:id])
     @user= current_user.update_attribute(:type, "Concursante")
-    flash[:notice] = "Ahora eres <strong>Concursante</strong>"
+    flash[:notice] = "Ahora eres Concursante"
     redirect_to root_url
   end
 
   def salir_concurso
     @user = User.friendly.find(params[:id])
     @user= current_user.update_attribute(:type, nil)
-    flash[:info] = "Haz <strong>salido</strong> del concurso"
+    flash[:info] = "Haz salido del concurso"
     redirect_to root_url
   end
 
