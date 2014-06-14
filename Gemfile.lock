@@ -71,6 +71,7 @@ GEM
       thor (~> 0.19.1)
     friendly_id (5.0.4)
       activerecord (>= 4.0.0)
+    groupify (0.5.1)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -161,6 +162,7 @@ DEPENDENCIES
   devise
   foreman
   friendly_id (~> 5.0.0)
+  groupify
   jbuilder (~> 1.2)
   jquery-rails
   pg (= 0.15.1)

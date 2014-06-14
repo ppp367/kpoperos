@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140609005607) do
+ActiveRecord::Schema.define(version: 20140614092919) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -25,6 +25,21 @@ ActiveRecord::Schema.define(version: 20140609005607) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "group_memberships", force: true do |t|
+    t.string  "member_type"
+    t.integer "member_id"
+    t.integer "group_id"
+    t.string  "group_name"
+  end
+
+  add_index "group_memberships", ["group_id"], name: "index_group_memberships_on_group_id"
+  add_index "group_memberships", ["group_name"], name: "index_group_memberships_on_group_name"
+  add_index "group_memberships", ["member_id", "member_type"], name: "index_group_memberships_on_member_id_and_member_type"
+
+  create_table "groups", force: true do |t|
+    t.string "type"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
