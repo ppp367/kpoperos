@@ -14,8 +14,8 @@ class GroupsController < ApplicationController
 
   def create
       group = Group.new(group_params)
-      user = User.new
-      group.add user
+      group.add current_user
+
       if group.save
         flash[:notice] = "Grupo creado Satisfactoriamente"
         redirect_to root_path

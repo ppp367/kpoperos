@@ -6,7 +6,7 @@
 
 <ul>
   <% User.in_group(@group).each do |user| %>
-    <li><%= user.username %> | <%= user.email %> |  <%= user.group %> </li>
+    <li><%= user.username %> | <%= user.email %> </li>
   <% end %>
 </ul>
 

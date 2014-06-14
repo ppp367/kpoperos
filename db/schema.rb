@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 20140614105712) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "username"
-    t.string   "role"
     t.string   "slug"
     t.string   "type"
   end
