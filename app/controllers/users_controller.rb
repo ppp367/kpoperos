@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@user = Concursante.friendly.find(params[:id].downcase)
+  	#@user = Concursante.friendly.find(params[:id].downcase)
   end
 
   def new

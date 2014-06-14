@@ -1,0 +1,14 @@
+<% provide(:title, @group.name) %>
+
+<h1>Perfil de BANDA <%= @group.name %>!</h1>
+
+<h1>Integrantes</h1>
+
+
+<ul>
+  <% User.in_group(@group).each do |user| %>
+    <li><%= user.username %> | <%= user.email %> |  <%= user.group %> </li>
+  <% end %>
+</ul>
+
+<h2>La vista esta en views/groups/show.html.erb</h2>

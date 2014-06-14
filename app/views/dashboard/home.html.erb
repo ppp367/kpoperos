@@ -6,7 +6,7 @@
 	<h3>Todos los usuarios</h3>
 	<ul>
 	  <% @users.each do |user| %>
-	    <li><%= user.username %> | <%= user.email %> | <%= user.class.name %> </li>
+	    <li><%= user.username %> | <%= user.email %> | <%= user.class.name %> | <% Group.with_member(user) do |banda| %> <%= banda.name %> <% end %></li>
 	  <% end %>
 	</ul>
 </div>
@@ -43,7 +43,7 @@
 	                                		method: :post, confirm: "¿Estás Seguro? Tu perfil se borrara and stuff" %>
 	<% else %>
 		<h4>¿Quieres entrar al Concurso?</h4>
-		<%= button_to "Quiero entrar al Concurso", {:controller => "users", action: "concursar", id: current_user.id },
-		                                		method: :post %>
+		<%= button_to "Quiero entrar al Concurso", {:controller => "groups", action: "new" },
+		                                		method: :get %>
 	<% end %>
 </div>

@@ -6,12 +6,16 @@ Kpoperos::Application.routes.draw do
   get "prices", to: 'static_pages#prices'
   get "contact", to: 'static_pages#contact'
 
+  get "bandas/new", to: 'groups#new'
   #get "users/prueba"
-  get "/concursantes/:id" => 'users#show'
+  #get "/concursantes/:id" => 'users#show'
+
+  get "/bandas/:id" => 'groups#show'
+
+  post "bandas/new" => 'groups#create'
 
   devise_for :users
-  resources :users, :concursantes
-
+  resources :users
   authenticated :user do
     root :to => "dashboard#home", as: :user_root
 

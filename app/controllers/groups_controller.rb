@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class GroupsController < ApplicationController
   def index
   end
 
@@ -6,13 +6,23 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@user = Concursante.friendly.find(params[:id].downcase)
+  	@group = Group.friendly.find(params[:id].downcase)
   end
 
   def new
   end
 
   def create
+      @group = Group.new(group_params)
+      @user = User.new
+      @group.add @user
+      if @group.save
+        flash[:notice] = "Grupo creado Satisfactoriamente"
+        redirect_to root_path
+      else
+        flash[:warning] = "Error al crear el grupo"
+        render "new"
+      end
   end
 
   def edit
@@ -24,18 +34,15 @@ class UsersController < ApplicationController
   def delete
   end
 
-  def concursar
-    @user = User.friendly.find(params[:id])
-    @user= current_user.update_attribute(:type, "Concursante")
-    flash[:notice] = "Ahora eres Concursante"
-    redirect_to root_url
+  private
+
+  def group_params
+    params.require(:group).permit(:name)
   end
 
-  def salir_concurso
-    @user = User.friendly.find(params[:id])
-    @user= current_user.update_attribute(:type, nil)
-    flash[:info] = "Haz salido del concurso"
-    redirect_to root_url
+  def group_name
+    params.require(:group).permit(:name)
   end
+
 
 end 
