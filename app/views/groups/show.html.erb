@@ -4,7 +4,6 @@
 
 <h1>Integrantes</h1>
 
-
 <ul>
   <% User.in_group(@group).each do |user| %>
     <li><%= user.username %> | <%= user.email %> |  <%= user.group %> </li>
@@ -12,3 +11,7 @@
 </ul>
 
 <h2>La vista esta en views/groups/show.html.erb</h2>
+
+<% Group.with_member(current_user).each do |band| %>
+	<h3> Eres miembro de <%= band.name %> </h3>
+<% end %>

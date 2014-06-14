@@ -9,8 +9,7 @@ class User < ActiveRecord::Base
 
 	validates :username, :presence => true, :uniqueness => true
 
-	extend FriendlyId
-	friendly_id :username, use: :slugged
+	
 
 	
 end
