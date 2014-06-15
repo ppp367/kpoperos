@@ -1,7 +1,8 @@
 class Group < ActiveRecord::Base  
   acts_as_group :members => [:users], :default_members => :users
-
+  acts_as_votable
   validates :name, :presence => true, uniqueness: true
+  
 
   #has_many: :users, through: :group_membership
 

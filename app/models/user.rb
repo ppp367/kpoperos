@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
 	acts_as_group_member
   	acts_as_named_group_member
+  	acts_as_voter
 
 
 	extend FriendlyId
