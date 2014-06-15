@@ -14,16 +14,21 @@ class GroupsController < ApplicationController
   end
 
   def create
-      @group = Group.new(group_params)
-      current_user.update_attribute(:type, "Concursante")
-      @group.add current_user
-
-      if @group.save
-        flash[:notice] = "Grupo creado Satisfactoriamente"
+      if current_user.type == "Concursante"
+        flash[:alert] = "Ya perteneces a un equipo."
         redirect_to root_path
       else
-        flash[:alert] = "Error al crear el grupo"
-        render "new"
+        @group = Group.new(group_params)
+        current_user.update_attribute(:type, "Concursante")
+        @group.add current_user
+
+        if @group.save
+          flash[:notice] = "Grupo creado Satisfactoriamente"
+          redirect_to root_path
+        else
+          flash[:alert] = "Error al crear el grupo"
+          render "new"
+        end
       end
   end
 
