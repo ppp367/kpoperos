@@ -15,6 +15,7 @@ class GroupsController < ApplicationController
 
   def create
       @group = Group.new(group_params)
+      current_user.update_attribute(:type, "Concursante")
       @group.add current_user
 
       if @group.save
@@ -38,12 +39,13 @@ class GroupsController < ApplicationController
         flash[:alert] = "El usuario #{params[:user_to_add][:username]} No está registrado en la página."
         redirect_to session.delete(:return_to) 
       else
-        if @user.in_group?(grupo)
-          flash[:warning] = "El usuario ya pertenece al grupo #{grupo.name}."
+        if @user.type == "Concursante"
+          flash[:warning] = "El usuario No puede ser agregado porque ya pertenece a otro equipo."
           redirect_to session.delete(:return_to)
         else
+          @user.update_attribute(:type, "Concursante")
           grupo.add @user
-          flash[:notice] = "Usuario: #{@user.username} agregado Satisfactoriamente al grupo #{grupo.name}."
+          flash[:notice] = "Usuario: #{@user.username} agregado Satisfactoriamente al equipo #{grupo.name}."
           redirect_to session.delete(:return_to) 
         end
       end 

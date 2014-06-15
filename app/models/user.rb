@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 	acts_as_group_member
   	acts_as_named_group_member
 
+
 	extend FriendlyId
 	friendly_id :username, use: :slugged
 	
@@ -18,6 +19,8 @@ end
 class Concursante < User
 
 	self.inheritance_column = :type
+
+	#has_one :group, through: :group_membership
 
 	extend FriendlyId
 	friendly_id :username, use: :slugged
