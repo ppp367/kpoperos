@@ -15,6 +15,9 @@ Kpoperos::Application.routes.draw do
   post "bandas/add_member" => 'groups#add_member'
   post "bandas/new" => 'groups#create'
 
+  post "bandas/votar" => 'groups#votar'
+  post "bandas/desvotar" => 'groups#desvotar'
+
   
   devise_for :users
   resources :users

@@ -62,6 +62,22 @@ class GroupsController < ApplicationController
   def delete
   end
 
+  def votar
+    session[:return_to] ||= request.referer
+    @group = Group.find_by_name(params[:grupo])
+    @group.vote_by :voter => current_user
+    flash[:notice] = "Haz votado por #{@group.name}."
+    redirect_to session.delete(:return_to) 
+  end
+
+  def desvotar
+    session[:return_to] ||= request.referer
+    @group = Group.find_by_name(params[:grupo])
+    @group.unvote_by current_user
+    flash[:info] = "Haz Anulado tu voto por #{@group.name}."
+    redirect_to session.delete(:return_to) 
+  end
+
   private
 
   def group_params

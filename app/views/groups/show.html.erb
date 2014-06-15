@@ -2,8 +2,16 @@
 
 <h1>Perfil de BANDA <%= @group.name %>!</h1>
 
-<h1>Integrantes</h1>
+<h2>Tiene <%= @group.cached_votes_total %> Votos!</h2>
+<% if current_user.voted_for?(@group) %>
+	<h3>Ya haz votado</h3>
+	<%= button_to "Anular Voto", {:controller => :groups, :action => :desvotar, :grupo => @group}, {:method => :post } %>
+<% else %>
+	<h3>Vota!</h3>
+	<%= button_to "Vota por #{@group.name}", {:controller => :groups, :action => :votar, :grupo => @group}, {:method => :post } %>
+<% end %>
 
+<h3>Integrantes</h3>
 <ul>
   <% User.in_group(@group).each do |user| %>
     <li><%= user.username %> | <%= user.email %> </li>
@@ -16,14 +24,17 @@
 	<h3> Eres miembro de <%= band.name %> </h3>
 <% end %>
 
-<h1>Agrega a tus compas al grupo</h1>
-<%= form_for :user_to_add, :url => url_for(:controller => 'groups', :action => 'add_member') do |f| %>
-  <div><%= f.label :username %>
-  <%= f.text_field :username, :autofocus => true %>
-  <%= hidden_field_tag :grupo, @group.name %>
-</div>
- 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<% if current_user.in_group?(@group) %>
+	<h1>Agrega a tus compas al grupo</h1>
+	<%= form_for :user_to_add, :url => url_for(:controller => 'groups', :action => 'add_member') do |f| %>
+	  <div><%= f.label :username %>
+	  <%= f.text_field :username, :autofocus => true %>
+	  <%= hidden_field_tag :grupo, @group.name %>
+	</div>
+	 
+	  <p>
+	    <%= f.submit %>
+	  </p>
+	<% end %>
+
+<%end%>
