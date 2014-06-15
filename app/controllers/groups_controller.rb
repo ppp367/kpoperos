@@ -30,19 +30,24 @@ class GroupsController < ApplicationController
   end
 
   def add_member
-    @user = User.find_by_email!("pedromotad@gmail.com")
-    if @user == nil
-      flash[:alert] = "El usuario no se encuntra registrado en la pagina"
-      redirect_to root_path
-    else
-      if @user.in_group?(@group)
-        flash[:warning] = "El usuario ya pertenece a ese grupo."
+    session[:return_to] ||= request.referer
+
+    user = User.find_by_username(params[:user_to_add][:username])
+    grupo = Group.find_by_name(params[:grupo])
+      if user == nil
+        flash[:alert] = "El usuario #{params[:user_to_add][:username]} No está registrado en la página."
+        redirect_to session.delete(:return_to) 
       else
-        @group.add @user
-        flash[:notice] = "Usuario agregado Satisfactoriamente"
-        redirect_to root_path
+        if user.in_group?(grupo)
+          flash[:warning] = "El usuario ya pertenece al grupo #{grupo.name}."
+          redirect_to session.delete(:return_to)
+        else
+          #@group.add @user
+          flash[:notice] = "Usuario agregado Satisfactoriamente al grupo #{grupo.name}."
+          redirect_to session.delete(:return_to) 
+        end
       end 
-    end
+    
   end
 
   def update
@@ -62,7 +67,8 @@ class GroupsController < ApplicationController
   end
 
   def user_to_add
-    params.require(:user_to_add).permit(:email)
+    params.require(:user_to_add).permit(:username, :grupo)
+    $usern = user_to_add
   end
 
 

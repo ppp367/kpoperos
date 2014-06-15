@@ -18,8 +18,9 @@
 
 <h1>Agrega a tus compas al grupo</h1>
 <%= form_for :user_to_add, :url => url_for(:controller => 'groups', :action => 'add_member') do |f| %>
-  <div><%= f.label :email %>
-  <%= f.text_field :email, :autofocus => true %>
+  <div><%= f.label :username %>
+  <%= f.text_field :username, :autofocus => true %>
+  <%= hidden_field_tag :grupo, @group.name %>
 </div>
  
   <p>

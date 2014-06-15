@@ -6,25 +6,31 @@ Kpoperos::Application.routes.draw do
   get "prices", to: 'static_pages#prices'
   get "contact", to: 'static_pages#contact'
 
-  get "bandas/new", to: 'groups#new'
-  #get "users/prueba"
-  #get "/concursantes/:id" => 'users#show'
   
   get "bandas", to: 'groups#index'
 
-  get "/bandas/:id" => 'groups#show'
-
-  post "bandas/new" => 'groups#create'
+  get "/banda/:id" => 'groups#show'
+  #get "bandas/new" => 'static_pages#home'
+  
   post "bandas/add_member" => 'groups#add_member'
+  post "bandas/new" => 'groups#create'
 
+  resource :session, :only => [:new, :create, :destroy]
+  resource :users
   devise_for :users
-  resources :users
+
   authenticated :user do
     root :to => "dashboard#home", as: :user_root
-
+    
     get "dashboard/home"
     post "/concursar/:id", to: 'users#concursar'
     post "/salir_concurso/:id", to: 'users#salir_concurso'
+    get "bandas/new", to: 'groups#new'
+  end
+
+  devise_scope :user do
+    get '/users/sign_out' => 'sessions#destroy'
+    post 'session' => 'sessions#create'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

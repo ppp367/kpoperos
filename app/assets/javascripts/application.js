@@ -17,6 +17,7 @@
 //= require twitter/bootstrap/bootstrap-alert
 //= require twitter/bootstrap/bootstrap-button
 //= require twitter/bootstrap/bootstrap-collapse
+//= require jquery_ujs
 //= require_tree .
 
 $(function(){
