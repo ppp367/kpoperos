@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
 
+gem 'cancancan'
+
 #gem 'activeadmin', github: 'gregbell/active_admin'
 
 gem 'carrierwave'
