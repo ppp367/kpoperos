@@ -41,6 +41,11 @@ GEM
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
     builder (3.1.4)
+<<<<<<< HEAD
+=======
+    bxslider-rails (4.1.0)
+    cancancan (1.8.2)
+>>>>>>> 996d41f3d451a7540c9cbccbefa95f9475bcb8f4
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -155,6 +160,11 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+<<<<<<< HEAD
+=======
+  bxslider-rails
+  cancancan (~> 1.8)
+>>>>>>> 996d41f3d451a7540c9cbccbefa95f9475bcb8f4
   carrierwave
   coffee-rails (~> 4.0.0)
   devise
