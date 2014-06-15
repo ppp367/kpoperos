@@ -49,7 +49,6 @@ class GroupsController < ApplicationController
           redirect_to session.delete(:return_to) 
         end
       end 
-    
   end
 
   def update
