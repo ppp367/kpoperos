@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140614105712) do
+ActiveRecord::Schema.define(version: 20140615132042) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -38,11 +38,23 @@ ActiveRecord::Schema.define(version: 20140614105712) do
   add_index "group_memberships", ["member_id", "member_type"], name: "index_group_memberships_on_member_id_and_member_type"
 
   create_table "groups", force: true do |t|
-    t.string "type"
-    t.string "name"
-    t.string "slug"
+    t.string  "type"
+    t.string  "name"
+    t.string  "slug"
+    t.integer "cached_votes_total",    default: 0
+    t.integer "cached_votes_score",    default: 0
+    t.integer "cached_votes_up",       default: 0
+    t.integer "cached_votes_down",     default: 0
+    t.integer "cached_weighted_score", default: 0
+    t.integer "cached_weighted_total", default: 0
   end
 
+  add_index "groups", ["cached_votes_down"], name: "index_groups_on_cached_votes_down"
+  add_index "groups", ["cached_votes_score"], name: "index_groups_on_cached_votes_score"
+  add_index "groups", ["cached_votes_total"], name: "index_groups_on_cached_votes_total"
+  add_index "groups", ["cached_votes_up"], name: "index_groups_on_cached_votes_up"
+  add_index "groups", ["cached_weighted_score"], name: "index_groups_on_cached_weighted_score"
+  add_index "groups", ["cached_weighted_total"], name: "index_groups_on_cached_weighted_total"
   add_index "groups", ["slug"], name: "index_groups_on_slug", unique: true
 
   create_table "users", force: true do |t|
@@ -70,5 +82,20 @@ ActiveRecord::Schema.define(version: 20140614105712) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["slug"], name: "index_users_on_slug", unique: true
+
+  create_table "votes", force: true do |t|
+    t.integer  "votable_id"
+    t.string   "votable_type"
+    t.integer  "voter_id"
+    t.string   "voter_type"
+    t.boolean  "vote_flag"
+    t.string   "vote_scope"
+    t.integer  "vote_weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+  add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
 
 end
