@@ -15,3 +15,14 @@
 <% Group.with_member(current_user).each do |band| %>
 	<h3> Eres miembro de <%= band.name %> </h3>
 <% end %>
+
+<h1>Agrega a tus compas al grupo</h1>
+<%= form_for :user_to_add, :url => url_for(:controller => 'groups', :action => 'add_member') do |f| %>
+  <div><%= f.label :email %>
+  <%= f.text_field :email, :autofocus => true %>
+</div>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

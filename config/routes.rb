@@ -15,6 +15,7 @@ Kpoperos::Application.routes.draw do
   get "/bandas/:id" => 'groups#show'
 
   post "bandas/new" => 'groups#create'
+  post "bandas/add_member" => 'groups#add_member'
 
   devise_for :users
   resources :users
