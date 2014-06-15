@@ -32,18 +32,18 @@ class GroupsController < ApplicationController
   def add_member
     session[:return_to] ||= request.referer
 
-    user = User.find_by_username(params[:user_to_add][:username])
+    @user = User.find_by_username(params[:user_to_add][:username])
     grupo = Group.find_by_name(params[:grupo])
-      if user == nil
+      if @user == nil
         flash[:alert] = "El usuario #{params[:user_to_add][:username]} No está registrado en la página."
         redirect_to session.delete(:return_to) 
       else
-        if user.in_group?(grupo)
+        if @user.in_group?(grupo)
           flash[:warning] = "El usuario ya pertenece al grupo #{grupo.name}."
           redirect_to session.delete(:return_to)
         else
-          #@group.add @user
-          flash[:notice] = "Usuario agregado Satisfactoriamente al grupo #{grupo.name}."
+          grupo.add @user
+          flash[:notice] = "Usuario: #{@user.username} agregado Satisfactoriamente al grupo #{grupo.name}."
           redirect_to session.delete(:return_to) 
         end
       end 

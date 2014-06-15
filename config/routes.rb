@@ -15,10 +15,9 @@ Kpoperos::Application.routes.draw do
   post "bandas/add_member" => 'groups#add_member'
   post "bandas/new" => 'groups#create'
 
-  resource :session, :only => [:new, :create, :destroy]
-  resource :users
+  
   devise_for :users
-
+  resources :users
   authenticated :user do
     root :to => "dashboard#home", as: :user_root
     
@@ -28,10 +27,7 @@ Kpoperos::Application.routes.draw do
     get "bandas/new", to: 'groups#new'
   end
 
-  devise_scope :user do
-    get '/users/sign_out' => 'sessions#destroy'
-    post 'session' => 'sessions#create'
-  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
