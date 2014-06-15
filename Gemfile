@@ -43,6 +43,8 @@ gem 'groupify'
 
 gem 'acts_as_votable', '~> 0.10.0'
 
+gem 'acts_as_commentable_with_threading'
+
 gem 'bxslider-rails'
 
 group :doc do
