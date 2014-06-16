@@ -36,5 +36,13 @@
 	    <%= f.submit %>
 	  </p>
 	<% end %>
-
 <%end%>
+
+<h1>Comentarios</h1>
+
+<div class="comments">
+	<% if user_signed_in? %>
+		<%= render :partial => 'comments/form', :locals => { :comment => @new_comment } %>
+	<% end %>
+	<%= render :partial => 'comments/comment', :collection => @comments, :as => :comment %>
+</div>
