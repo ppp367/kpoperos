@@ -30,6 +30,7 @@ Kpoperos::Application.routes.draw do
     get "bandas/new", to: 'groups#new'
   end
 
+  resources :charges
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

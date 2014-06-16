@@ -1,0 +1,14 @@
+<%= form_tag charges_path do %>
+  <article>
+    <label class="amount">
+      <span>Carnet: $550.00</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-image="http://i.imgur.com/O52xHCe.png"
+          data-description="Carnet"
+          data-name="Kpoperos XVIII"
+          data-amount="55000"></script>
+<% end %>
