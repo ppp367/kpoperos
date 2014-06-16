@@ -64,7 +64,7 @@ class GroupsController < ApplicationController
 
   def votar
     session[:return_to] ||= request.referer
-    @group = Group.find_by_name(params[:grupo])
+    @group = Group.friendly.find(params[:grupo])
     @group.vote_by :voter => current_user
     flash[:notice] = "Haz votado por #{@group.name}."
     redirect_to session.delete(:return_to) 
@@ -72,7 +72,7 @@ class GroupsController < ApplicationController
 
   def desvotar
     session[:return_to] ||= request.referer
-    @group = Group.find_by_name(params[:grupo])
+    @group = Group.friendly.find(params[:grupo])
     @group.unvote_by current_user
     flash[:info] = "Haz Anulado tu voto por #{@group.name}."
     redirect_to session.delete(:return_to) 
