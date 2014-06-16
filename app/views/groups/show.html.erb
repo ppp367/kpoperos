@@ -1,39 +1,59 @@
 <% provide(:title, @group.name) %>
+<div id="group-title">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 avatar-group"><%= image_tag @group.avatar.url.to_s %></div>
+			<h3 class="col-xs-12 nombre-group"><%= @group.name %></h3>
+			<div class="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4 votos-group">
+				<h5>VOTOS</h5>
+				<h4><%= @group.cached_votes_total %></h4>
+			</div>
+			<div class="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4 info-group">
+				<h6><%= @group.ubicacion %></h6>
+				<p><%= @group.about %></p>
+			</div>
+			<% if user_signed_in? %>
+				<% if current_user.voted_for?(@group) %>
+					<button class="btn col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4"><%= link_to "Anular Voto", {:controller => :groups, :action => :desvotar, :grupo => @group}, {:method => :post } %><span style="color:#39b54a;" class="glyphicon glyphicon-ok"></span></button>
+				<% else %>
+					<button class="btn col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4"><%= link_to "Vota por #{@group.name}", {:controller => :groups, :action => :votar, :grupo => @group}, {:method => :post } %></button>
+				<% end %>
+			<% end% >
 
-<h1>Perfil de BANDA <%= @group.name %>! <small><%= @group.ubicacion %></small></h1>
-
-<%= image_tag @group.avatar.url.to_s %>
-
-<h2>About</h2>
-<p><%= @group.about %></p>
-
-<h2>Tiene <%= @group.cached_votes_total %> Votos!</h2>
-<% if current_user.voted_for?(@group) %>
-	<h3>Ya haz votado</h3>
-	<%= button_to "Anular Voto", {:controller => :groups, :action => :desvotar, :grupo => @group}, {:method => :post } %>
-<% else %>
-	<h3>Vota!</h3>
-	<%= button_to "Vota por #{@group.name}", {:controller => :groups, :action => :votar, :grupo => @group}, {:method => :post } %>
-<% end %>
-
-<h3>Integrantes</h3>
-<ul>
-  <% User.in_group(@group).each do |user| %>
-    <li><%= user.username %> | <%= user.email %> </li>
-  <% end %>
-</ul>
-
-<h2>La vista esta en views/groups/show.html.erb</h2>
-
-<% if current_user.in_group?(@group) %>
-	<h1>Agrega a tus compas al grupo</h1>
-	<%= form_for :user_to_add, :url => url_for(:controller => 'groups', :action => 'add_member') do |f| %>
-	  <div><%= f.label :username %>
-	  <%= f.text_field :username, :autofocus => true %>
-	  <%= hidden_field_tag :grupo, @group.name %>
+		</div>
 	</div>
-	  <p>
-	    <%= f.submit %>
-	  </p>
-	<% end %>
-<%end%>
+</div>
+
+<div id="group-content">
+	<div class="group-members">
+		<div class="container">
+			<div class="row">
+				<h5>INTEGRANTES</h5>
+				<% User.in_group(@group).each do |user| %>
+				<a class="tile-member col-xs-4 col-md-2 thumbnail">
+					<div id="member-avatar"><%= image_tag gravatar_image_url(user.email.gsub('spam', 'mdeering'), filetype: :png, rating: 'pg', size: 150, secure:false ) %></div>
+				<div class="caption">
+					<h4 class="member-nombre"><%= user.username %></h4>
+				</div>
+				<% end %>
+				</a>
+			</div>
+			<% if user_signed_in? %>
+				<div class="row">
+					<% if current_user.in_group?(@group) %>
+						<h1>Agrega a tus compañeros</h1>
+						<%= form_for :user_to_add, :url => url_for(:controller => 'groups', :action => 'add_member') do |f| %>
+						  <div><%= f.label :username %>
+						  <%= f.text_field :username, :autofocus => true %>
+						  <%= hidden_field_tag :grupo, @group.name %>
+						</div>
+						  <p>
+						    <%= f.submit %>
+						  </p>
+						<% end %>
+					<%end%>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

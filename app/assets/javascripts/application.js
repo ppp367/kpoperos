@@ -11,16 +11,37 @@
 // about supported directives.
 //
 //= require jquery
-//= require twitter/bootstrap/bootstrap-modal
-//= require twitter/bootstrap/bootstrap-dropdown
-//= require twitter/bootstrap/bootstrap-transition
-//= require twitter/bootstrap/bootstrap-alert
-//= require twitter/bootstrap/bootstrap-button
-//= require twitter/bootstrap/bootstrap-collapse
 //= require jquery_ujs
 //= require bxslider
 //= require_tree .
 
+
 $(document).ready(function(){
   $('.bxslider').bxSlider();
+
+  $('#btn-mie').click(function(){
+  		$('#miercoles').css({"display":"table-row-group"});
+  		$('#jueves').css({"display":"none"});
+  		$('#viernes').css({"display":"none"});
+  });
+
+  $('#btn-jue').click(function(){
+  		$('#jueves').css({"display":"table-row-group"});
+  		$('#miercoles').css({"display":"none"});
+  		$('#viernes').css({"display":"none"});
+  });
+
+  $('#btn-vie').click(function(){
+  		$('#viernes').css({"display":"table-row-group"});
+  		$('#jueves').css({"display":"none"});
+  		$('#miercoles').css({"display":"none"});
+  });
+
+  $('#comprar-carnet').click(function(){
+  		$('#comprar-menu').css({"display":"block"});
+  });
+
+  $('#comprar-menu button').click(function(){
+  		$('#comprar-menu').css({"display":"none"});
+  });
 });

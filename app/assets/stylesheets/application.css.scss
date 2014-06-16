@@ -14,5 +14,1077 @@
  */
 
 body { 
-    padding-top: 65px; 
+    margin: 					0px;
+    font-family: 				'Open Sans', sans-serif;
+}
+
+
+//=========================SLIDER=================================
+#container-slider
+{
+	display: 					block;
+	position: 					relative;
+	width: 						100%;
+	height: 					565px;	
+	background-color: 			#F00;	
+	background: 				image-url("bg_slider.jpg") no-repeat;
+	background-size: 			cover;
+	-moz-background-size: 		cover;	
+	-webkit-background-size: 	cover;	
+	-o-background-size: 		cover;	
+}
+.bx-viewport
+{
+	background-color: 			transparent !important;
+	border: 					none !important;
+	box-shadow: 				none !important;
+}
+.bxslider li img
+{
+	margin-left: 				auto;
+	margin-right: 				auto;	
+}
+.bx-wrapper
+{
+	top: 						153px;
+}
+
+
+//=========================FRASE=================================
+.container-white
+{
+	display: 					block;
+	position: 					relative;
+	width: 						100%;
+	height: 					320px;
+	background: 				#FFF;
+	box-shadow: 				0px 0px 15px #000;
+	-o-box-shadow: 				0px 0px 15px #000;
+	-moz-box-shadow: 			0px 0px 15px #000;
+	-webkit-box-shadow: 		0px 0px 15px #000;
+}
+#contenedor-experiencia
+{
+	display: 					block;
+	position: 					relative;
+	top:						80px;
+	padding: 					25px 0 25px 0;
+	border-top: 				1px solid #b3b3b3;
+	border-bottom: 				1px solid #b3b3b3;
+}
+.container-white h3
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					50px;
+	font-weight: 				700;
+	text-align: 				center;
+	margin-top: 				0px;
+	margin-bottom: 				0px;
+}
+.container-cover
+{
+	display:					block;
+	position: 					relative;
+	width: 						100%;
+	height:						300px;
+}
+
+
+//=========================COVER 1=================================
+#auditorio
+{
+	background: 				image-url("cover-01.jpg")center center fixed no-repeat;
+	background-size: 			cover;
+	-moz-background-size: 		cover;	
+	-webkit-background-size: 	cover;	
+	-o-background-size: 		cover;
+	text-indent: 				-9999px;
+	z-index: 					-2;
+}
+
+
+//=========================CONFERENCIAS=================================
+.container-black
+{
+	display: 					block;
+	position: 					relative;
+	width: 						100%;
+	height: 					370px;
+	background: 				#000;
+	box-shadow: 				0px 0px 15px #000;
+	-o-box-shadow: 				0px 0px 15px #000;
+	-moz-box-shadow: 			0px 0px 15px #000;
+	-webkit-box-shadow: 		0px 0px 15px #000;
+}
+.container-black h1
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					50px;
+	font-weight: 				700;
+	text-align: 				left;
+	color:						#FFF;
+	border-bottom: 				solid 1px #FFF;
+	margin-bottom: 				40px;
+}
+.container-black p
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					14px;
+	font-weight: 				300;
+	text-align: 				left;
+	color:						#FFF;
+}
+.preview-conf
+{	
+	display: 					inline-block;
+	position: 					relative;
+	width: 						150px;
+	height: 					186px;
+	top:						50%;
+	margin-top: 				-93px !important;
+}
+.preview-conf>h5
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					16px;
+	font-weight: 				700;
+	text-align: 				center;
+	color:						#FFF;
+}
+#preview-ctr
+{
+	margin:						0 60px 0 60px;
+}
+#container-conf
+{
+	height: 					370px !important;
+}
+.cont1
+{
+	display: 					block;
+	position: 					relative;
+	top:						50%;
+	margin-top: 				-150px;
+}
+#container-texto
+{
+	display:					inline-block;
+	position: 					relative;
+	height: 					300px;
+}
+#container-fotos
+{
+	display:					inline-block;
+	position: 					relative;
+	height: 					300px;
+}
+
+
+//=========================COVER 2=================================
+#auditorio-gente
+{
+	background: 				image-url("cover-02.jpg")center center fixed no-repeat;
+	background-size: 			cover;
+	-moz-background-size: 		cover;	
+	-webkit-background-size: 	cover;	
+	-o-background-size: 		cover;
+	text-indent: 				-9999px;
+	z-index: 					-2;
+}
+
+
+//=========================CONCURSO=================================
+.container-pink
+{
+	display: 					block;
+	position: 					relative;
+	width: 						100%;
+	height: 					395px;
+	background: 				#d4145a;
+	box-shadow: 				0px 0px 15px #000;
+	-o-box-shadow: 				0px 0px 15px #000;
+	-moz-box-shadow: 			0px 0px 15px #000;
+	-webkit-box-shadow: 		0px 0px 15px #000;
+}
+.container-pink h1
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					50px;
+	font-weight: 				700;
+	text-align: 				right;
+	color:						#FFF;
+	border-bottom: 				solid 1px #FFF;
+	margin-bottom: 				40px;
+	margin-top: 				35px;
+}
+.container-pink p
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					14px;
+	font-weight: 				300;
+	text-align: 				right;
+	color:						#FFF;
+}
+.container-pink img
+{
+	display: 					block;
+	position: 					relative;
+	top:						22px;
+}
+.container-pink button
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					18px;
+	font-weight: 				300;
+	color:						#d4145a;
+	float: 						right;
+	margin-top: 				20px;
+}
+
+//=========================COVER 3=================================
+#concierto
+{
+	background: 				image-url("cover-03.jpg")center center fixed no-repeat;
+	background-size: 			cover;
+	-moz-background-size: 		cover;	
+	-webkit-background-size: 	cover;	
+	-o-background-size: 		cover;
+	text-indent: 				-9999px;
+	z-index: 					-2;
+}
+
+
+//=========================EVENTO SOCIALES=================================
+#btn-jules
+{
+	display: 					inline-block;
+	position: 					relative;
+	height: 					370px;
+	background: 				image-url("social-01.png") no-repeat;
+	background-position: 		top;
+	text-indent: 				-9999px;
+}
+#btn-jules:hover
+{
+	background-position: 		bottom;
+}
+
+#btn-hyde
+{
+	display: 					inline-block;
+	position: 					relative;
+	height: 					370px;
+	background: 				image-url("social-02.png") no-repeat;
+	background-position: 		top;
+	text-indent: 				-9999px;
+}
+#btn-hyde:hover
+{
+	background-position: 		bottom;
+}
+
+
+//=========================ULTIMO=================================
+.container-ultimo
+{
+	display: 					block;
+	position: 					relative;
+	width: 						100%;
+	height: 					900px;
+	background: 				image-url("ultimo-cover-01.jpg")center no-repeat;
+	background-size: 			cover;
+	-moz-background-size: 		cover;	
+	-webkit-background-size: 	cover;	
+	-o-background-size: 		cover;
+	z-index: 					-2;
+}
+.container-ultimo h4
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					60px;
+	font-weight: 				700;
+	color:						#FFF;
+	text-align: 				center;
+	margin-top:					100px;
+	border-top: 				1px solid #FFF;
+	border-bottom: 				1px solid #FFF;
+	padding: 					20px 0 20px 0;
+}
+.container-ultimo button
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					18px;
+	font-weight: 				600;
+	display: 					block;
+	position:					absolute;
+	margin-left: 				auto;
+	margin-right: 				auto;
+	bottom:						200px;
+	left:						50%;
+	margin-left: 				-175px;
+	background-color: 			#29abe2;
+	color:						#FFF;
+	width:						350px;
+	height:						50px;
+	border:						#0071bc;
+}
+.container-ultimo>div, .container-ultimo>div>div, .container-ultimo>div>div>div
+{
+	height:						100% !important;
+}
+.navbar-inner
+{
+	background-image: 			none !important;
+	background-color: 			rgba(255,255,255,0.9) !important;
+}
+
+
+//================================================================
+
+
+//=========================CONTACTO================================
+#map
+{
+	display: 					block;
+	position: 					relative;
+	width:						100%;
+	height:						700px;
+	background: 				#000;
+}
+.leaflet-top
+{
+	margin-top:					620px;
+} 
+#contacto-info
+{
+	display:					block;
+	position:					relative;
+	width:						100%;
+	height:						auto;
+	background: 				#29abe2;
+	padding-top: 				30px;
+	padding-bottom: 			30px;
+}
+#contacto-info h4
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					35px;
+	font-weight: 				700;
+	color:						#29abe2;
+}
+#contacto-info p
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					16px;
+	font-weight: 				300;
+	color:						#29abe2;
+}
+#direccion, #telefono, #correo
+{
+	border: 					3px solid #29abe2;
+	height: 					125px;
+	background: 				#FFF;
+}
+#forma-contacto
+{
+	display: 					block;
+	position: 					relative;
+	width: 						100%;
+	height:						auto;
+	background: 				#EAEAEA;
+	padding-top: 				30px;
+	padding-bottom: 			30px;
+}
+#nombre, #correoe, #mensaje
+{
+	height:						50px;
+	width: 						100%;
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					16px;
+	font-weight: 				300;
+}
+#forma-contacto h3
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					50px;
+	font-weight: 				300;
+	color:						#29abe2;
+	text-align: 				center;
+	margin-bottom: 				40px;
+}
+
+
+//================================================================
+
+
+//=========================PRECIOS================================
+#container-precios
+{
+	display:					block;
+	position: 					absolute;
+	left:						0;
+	top:						0;
+	right:						0;
+	bottom:						0;
+	background: 				image-url("precios-cover.jpg")center top fixed no-repeat;
+	background-size: 			cover;
+	-moz-background-size: 		cover;	
+	-webkit-background-size: 	cover;	
+	-o-background-size: 		cover;
+	z-index: 					-2;
+}
+#container-modulo-info
+{
+	display: 					block;
+	position: 					relative;
+	width: 						100%;
+	height: 					auto;
+	background: 				#0071bc;
+	margin-top: 				-100px;
+	z-index: 					-2;
+	padding-top: 				150px;
+	padding-bottom: 			50px;
+}
+#carnet-info
+{
+	display:					block;
+	position: 					relative;
+}
+#carnet-info>div:first-child
+{
+	
+	background:					#d4145a;
+	height: 					120px;
+	margin: 					175px 0 0 0;
+}
+#carnet-info h5
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					80px;
+	font-weight: 				500;
+	text-align: 				center;
+	color: 						#FFF;
+	margin: 					0;
+	vertical-align: 			center;
+	padding-top: 				10px;
+}
+#carnet-info>div:last-child
+{
+	background:					#FFF;
+	height: 					467px;
+	margin: 					0;
+	padding-top: 				33px;
+	border-bottom: 				10px solid #d4145a;
+}
+#carnet-info h6
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					24px;
+	font-weight: 				300;
+	text-align: 				center;
+	color: 						#333;
+	margin: 					0;
+	border-bottom: 				1px solid #CCC;
+	border-top: 				1px solid #EAEAEA;
+	padding-top:				35px;
+	padding-bottom: 			35px;
+}
+#carnet-desc
+{
+	display: 					block;
+	position: 					relative;
+}
+#carnet-desc p
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					30px;
+	font-weight: 				600;
+	text-align: 				center;
+	top:						0px;
+	color:						#FFF;
+}
+#carnet-btn
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					25px;
+	font-weight: 				600;
+	text-align: 				center;
+	padding-top: 				15px;
+}
+#container-hoteles
+{
+	display: 					block;
+	position: 					relative;
+	width: 						100%;
+	height: 					auto;
+	background: 				#000;
+	padding-top: 				50px;
+	padding-bottom: 			100px;
+	background: 				#000;
+}
+#container-hoteles h3
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					60px;
+	font-weight: 				700;
+	text-align: 				center;
+	color:						#FFF;
+	margin-bottom: 				125px;
+}
+.hotel
+{
+	display: 					block;
+	position: 					relative;
+	height: 					auto;
+	background: 				#0071bc;
+	border: 					5px solid #000;
+	color:						#FFF;
+}
+.hotel h4
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					22px;
+	font-weight: 				600;
+	text-align: 				center;
+}
+.hotel p
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					14px;
+	font-weight: 				300;
+	text-align: 				center;
+}
+.foto-hotel
+{
+	display:					block;
+	position:					relative;
+	margin-left: 				auto;
+	margin-right: 				auto;
+	width:						120px;
+	height: 					60px;
+	top:						-60px;
+}
+#container-hoteles span
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					30px;
+	font-weight: 				600;
+	text-align: 				center;
+	color:						#FFF;
+	height: 					auto;
+	background: 				#d4145a;
+}
+
+//================================================================
+
+
+//=========================comercios================================
+#container-comercios
+{
+	display: 					block;
+	position: 					relative;
+	width: 						100%;
+	height:						auto;
+	background:					image-url("comercio.jpg")center center fixed no-repeat;
+	background-size: 			cover;
+	-moz-background-size: 		cover;	
+	-webkit-background-size: 	cover;	
+	-o-background-size: 		cover;
+	z-index: 					-2;
+	margin: 					0px;
+	padding-top: 				100px;
+	padding-bottom: 			100px;
+}
+#container-comercios h4
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					60px;
+	font-weight: 				700;
+	text-align: 				center;
+}
+#container-comercios p
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					14px;
+	font-weight: 				300;
+	text-align: 				center;
+}
+.thumbnail
+{
+	border-radius: 				0px !important;
+}
+
+
+//================================================================
+
+
+//=========================CALENDARIO================================
+#container-calendario
+{
+	display: 					block;
+	position: 					relative;
+	width: 						100%;
+	height: 					auto;
+	padding-top: 				50px;
+	padding-bottom: 			50px;
+	background: 				#FFF;
+}
+#filtro-calendario
+{
+	padding-top: 				60px;
+	padding-bottom: 			60px;
+}
+#filtro-calendario div
+{
+	display: 					block;
+	position: 					relative;
+	margin-left: 				auto;
+	margin-right: 				auto;
+}
+#filtro-calendario button
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					20px;
+	font-weight: 				300;
+}
+#miercoles
+{
+	display:					table-row-group;
+}
+#jueves
+{
+	display: 					none;
+}
+#viernes
+{
+	display: 					none;
+}
+#calendario th
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					30px;
+	font-weight: 				500;
+	text-align: 				center;
+}
+#calendario td
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					16px;
+	font-weight: 				300;
+	text-align: 				center;
+}
+#container-calendario h3
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					60px;
+	font-weight: 				700;
+	text-align: 				center;
+	color:						#333;
+}
+
+
+
+//================================================================
+
+
+//=========================CONCURSO================================
+#concurso-container
+{
+	display: 					block;
+	position: 					relative;
+	width: 						100%;
+	height: 					800px;
+	background: 				image-url("bgconcursos.jpg")center top no-repeat;
+	-moz-background-size: 		cover;	
+	-webkit-background-size: 	cover;	
+	-o-background-size: 		cover;
+	z-index: 					-2;
+}
+#concurso-titulo
+{
+	display: 					block;
+	position: 					relative;
+	top:						180px;
+}
+#concurso-titulo h3
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					78px;
+	font-weight: 				700;
+	text-align: 				center;
+	color:						#FFF;
+	border-top: 				1px solid #FFF;
+	border-bottom: 				1px solid #FFF;
+	padding-top: 				30px;
+	padding-bottom: 			30px;
+}
+#concurso-titulo p
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					14px;
+	font-weight: 				300;
+	text-align: 				center;
+	color:						#FFF;
+}
+//=========================COVER CONCURSO================================
+
+//=========================CATEGORIAS=============================
+
+//=========================PREMIOS================================
+.container-premios
+{
+	display: 					block;
+	position: 					relative;
+	width: 						100%;
+	height: 					auto;
+	background: 				#d4145a;
+	box-shadow: 				0px 0px 15px #000;
+	-o-box-shadow: 				0px 0px 15px #000;
+	-moz-box-shadow: 			0px 0px 15px #000;
+	-webkit-box-shadow: 		0px 0px 15px #000;
+	padding-top: 				30px;
+	padding-bottom: 			50px;
+}
+.container-premios h1
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					50px;
+	font-weight: 				700;
+	text-align: 				center;
+	color:						#FFF;
+	border-bottom: 				solid 1px #FFF;
+}
+
+.list-group
+{
+	margin: 					0px !important;
+}
+.list-group-item
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					20px;
+	font-weight: 				300;
+	text-align: 				center !important;
+}
+.juez img:hover
+{
+	opacity: 					0.75;
+}
+
+
+//=========================JUECES================================
+
+//=========================BASES================================
+#bases-container
+{
+	display: 					block;
+	position: 					relative;
+	width: 						100%;
+	height: 					auto;
+	background: 				#FFF;
+	padding-top: 				30px;
+	padding-bottom: 			60px;
+}
+#bases-container h3
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					50px;
+	font-weight: 				700;
+	text-align: 				center;
+	color:						#333;
+}
+#bases-container p
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					14px;
+	font-weight: 				300;
+	text-align: 				center;
+	color:						#333;
+}
+#bases-container button
+{
+	width:						100%;
+	height: 					50px;
+	margin-top: 				20px;
+	background: 				#29abe2;
+	color:						#FFF;
+}
+
+
+//=========================DASHBOARD================================
+#dashboard-title
+{
+	display:					block;
+	position:					relative;
+	width: 						100%;
+	height: 					auto;
+	background: 				#333;
+	padding-top: 				150px;
+	background: 				image-url("bgdashboard.jpg")center top fixed no-repeat;
+	-moz-background-size: 		cover;	
+	-webkit-background-size: 	cover;	
+	-o-background-size: 		cover;
+	z-index: 					-2;
+}
+.avatar-usuario img
+{
+	width: 						150px;
+	height: 					150px;
+}
+.nombre-usuario
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					40px;
+	font-weight: 				300;
+	color:						#FFF;
+	bottom:						0px;
+}
+.votos-dashboard h4
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					60px;
+	font-weight: 				700;
+	color:						#FFF;
+}
+.votos-dashboard p
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					20px;
+	font-weight: 				300;
+	color:						#FFF;
+}
+#dashboard-menu
+{
+	border-top: 				1px solid #CCC;
+	border-bottom: 				1px solid #CCC;
+	padding-top: 				10px;
+	padding-bottom: 			10px;
+	width: 						100%;
+	height: 					auto;
+	margin-left: 				auto;
+	margin-right: 				auto;
+}
+#dashboard-content
+{
+	display: 					block;
+	position: 					relative;
+	width: 						100%;
+	height: 					auto;
+	background: 				#EAEAEA;
+	padding-top: 				20px;
+}
+.tile-concursante
+{
+	height:						auto;
+	width: 						80px;
+	background-color: 			#FFF;
+	padding-top: 				15px;
+	box-shadow: 				1px 1px 2px #CCC;
+	-o-box-shadow: 				1px 1px 2px #CCC;
+	-moz-box-shadow: 			1px 1px 2px #CCC;
+	-webkit-box-shadow: 		1px 1px 2px #CCC;
+}
+#tile-avatar img
+{
+	display: 					block;
+	position: 					relative;
+	width: 						150px;
+	height: 					150px;
+	margin-left: 				auto;
+	margin-right: 				auto;
+}
+.tile-nombre
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					18px;
+	font-weight: 				700;
+	color:						#333;
+	text-align: 				center;
+}
+.tile-votos
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					16px;
+	font-weight: 				300;
+	color:						#333;
+	text-align: 				center;
+}
+#comprar-menu
+{
+	display: 					none;
+	padding-top: 				20px;
+	padding-bottom: 			10px;
+}
+#comprar-menu input
+{
+	height: 					auto;
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					18px;
+	font-weight: 				300;
+}
+
+
+//=========================PERFIL================================
+#group-title
+{
+	display:					block;
+	position:					relative;
+	width: 						100%;
+	height: 					auto;
+	background: 				#333;
+	padding-top: 				150px;
+	padding-bottom: 			50px;
+	background: 				image-url("bgdashboard.jpg")center top fixed no-repeat;
+	-moz-background-size: 		cover;	
+	-webkit-background-size: 	cover;	
+	-o-background-size: 		cover;
+}
+.avatar-group img
+{
+	display: 					block;
+	position: 					relative;
+	width: 						200px;
+	height:						200px;
+	margin-left: 				auto;
+	margin-right: 				auto;
+	border: 					5px solid #FFF;
+}
+.nombre-group
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					60px;
+	font-weight: 				700;
+	color:						#FFF;
+	text-align: 				center;
+}
+.votos-group
+{
+	margin-top: 				35px;
+	margin-bottom: 				35px;
+	background: 				rgba(255,255,255,0.5)
+}
+.votos-group h4
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					60px;
+	font-weight: 				700;
+	color:						#000;
+	text-align: 				center;
+}
+.votos-group h5
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					20px;
+	font-weight: 				300;
+	color:						#000;
+	text-align: 				center;
+}
+.info-group h6
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					18px;
+	font-weight: 				300;
+	color:						#FFF;
+	text-align: 				center;
+}
+.info-group p
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					14px;
+	font-weight: 				300;
+	color:						#FFF;
+	text-align: 				center;
+}
+#group-title button
+{
+	margin-top: 				20px;
+	margin-bottom: 				20px;
+}
+
+#group-content
+{
+	height: 					auto;
+	width: 						100%;
+	background: 				#FFF;
+	box-shadow: 				0px -2px 10px #000;
+	-o-box-shadow: 				0px -2px 10px #000;
+	-moz-box-shadow: 			0px -2px 10px #000;
+	-webkit-box-shadow: 		0px -2px 10px #000;
+}
+#group-content h5
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					40px;
+	font-weight: 				700;
+	color:						#d4145a;
+	text-align: 				center;
+	border-top: 				1px solid #CCC;
+	border-bottom: 				1px solid #CCC;
+	padding-top: 				20px;
+	padding-bottom: 			20px;
+	margin-top: 				50px;
+
+}
+.tile-member
+{
+	height:						auto;
+	width: 						80px;
+	background-color: 			#FFF;
+	padding-top: 				15px;
+	box-shadow: 				1px 1px 2px #CCC;
+	-o-box-shadow: 				1px 1px 2px #CCC;
+	-moz-box-shadow: 			1px 1px 2px #CCC;
+	-webkit-box-shadow: 		1px 1px 2px #CCC;
+}
+#member-avatar img
+{
+	display: 					block;
+	position: 					relative;
+	width: 						150px;
+	height: 					150px;
+	margin-left: 				auto;
+	margin-right: 				auto;
+}
+.member-nombre
+{
+	font-family: 				'Open Sans', sans-serif;
+	font-size: 					18px;
+	font-weight: 				700;
+	color:						#333;
+	text-align: 				center;
+}
+#login-container
+{
+	display: 					block;
+	position: 					absolute;
+	width: 						100%;
+	height: 					100%;
+	background: 				image-url("bglogin.jpg")center top fixed no-repeat;
+	-moz-background-size: 		cover;	
+	-webkit-background-size: 	cover;	
+	-o-background-size: 		cover;
+	z-index: 					-2;
+}
+#login-box
+{
+	display:					block;
+	position:					relative;
+	width:						300px;
+	height:						auto;
+	padding:					50px;
+	background: 				rgba(255,255,255,0.85);
+	margin-left: 				auto;
+	margin-right: 				auto;
+	top:						150px;
+}
+
+//=========================NAVBAR================================
+#container-navbar
+{
+	float: 				right;
+	padding-top: 		12px;
+}
+button
+{
+	z-index: 2!important;
 }

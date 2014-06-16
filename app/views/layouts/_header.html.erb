@@ -1,15 +1,21 @@
-<%= nav_bar :fixed => :top, :brand => "Kpoperos", :responsive => false do %>
+
+<%= nav_bar :fixed => :top, :brand =>  image_tag("logo_header-01.png"), :responsive => false do %>
+<div id="container-navbar">
     <%= menu_group do %>
         <%= menu_item "Home", home_path %>
-        <%= menu_divider %>
-        <%= menu_item "Este Año", about_path %>
         <%= menu_item "Concurso", contest_path %>
         <%= menu_item "Precios", prices_path %>
-        <%= menu_item "Contacto", contact_path %>
+        <%= menu_item "Información y Contacto", contact_path %>
         <%= menu_divider %>
+        <% if user_signed_in? %>
+          <%= menu_item current_user.username %>          
+          <%= menu_item 'Log out', destroy_user_session_path, :method => :delete %>
+        <% else %>
+          <%= menu_item 'Login', new_user_session_path %>
+        <% end %>
         <%= render 'layouts/idiomas' %>
     <% end %>
+    </div>
 <% end %>
-
 
 

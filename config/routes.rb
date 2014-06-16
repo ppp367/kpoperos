@@ -6,6 +6,12 @@ Kpoperos::Application.routes.draw do
   get "prices", to: 'static_pages#prices'
   get "contact", to: 'static_pages#contact'
 
+  post "home", to: 'static_pages#home'
+  post "about", to: 'static_pages#about'
+  post "contest", to: 'static_pages#contest'
+  post "prices", to: 'static_pages#prices'
+  post "contact", to: 'static_pages#contact'
+
   
   get "bandas", to: 'groups#index'
 

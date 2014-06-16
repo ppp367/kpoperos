@@ -1,3 +1,7 @@
+<div id="login-container">
+  <div id="login-box">
+<% if user_signed_in? %>
+
 <%= form_tag charges_path do %>
   <article>
     <label class="amount">
@@ -12,3 +16,7 @@
           data-name="Kpoperos XVIII"
           data-amount="55000"></script>
 <% end %>
+
+<% end %>
+</div>
+</div>

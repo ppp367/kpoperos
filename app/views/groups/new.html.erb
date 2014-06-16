@@ -1,3 +1,5 @@
+<div id="login-container">
+  <div id="login-box">
 <h1>Registra tu Banda!</h1>
 <%= form_for :group, :html => {:method => :put, :multipart => true} do |f| %>
   <%= f.label "Nombre de la banda" %>
@@ -12,7 +14,11 @@
   <%= f.label :avatar %>
   <%= f.file_field :avatar %>
 
+<br>
   <p>
-    <%= f.submit %>
+    <%= f.submit "Registrar" %>
   </p>
 <% end %>
+
+</div>
+</div>

@@ -1,3 +1,118 @@
 <% provide(:title, 'Concurso') %>
-<h1>StaticPages#contest</h1>
-<p>Find me in app/views/static_pages/contest.html.erb</p>
+<div id="concurso-container">
+	<div id="concurso-titulo">
+		<div class="container">
+			<div class="row">
+				<h3 class="col-xs-8 col-xs-offset-2"><font style="color:#29aae1;">CONCURSO</font> INTERNACIONAL DE <font style="color:#d3145a;">KPOP</font></h3>
+				<p class="col-xs-8 col-xs-offset-2"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-black">
+	<div class="container" id="container-conf">
+		<div class="cont1">
+			<div class="row">
+				<div class="col-md-4 col-xs-12" id="container-texto">
+					<h1>CATEGORIAS</h1>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+				</div>
+				<div class="col-md-7 col-md-offset-1 col-xs-12" id="container-fotos">
+	
+					<div class="preview-conf">
+						<%= image_tag("icon-concurso-01.png") %>
+						<h5>Canto</h5>
+					</div>
+	
+					<div class="preview-conf" id="preview-ctr">
+						<%= image_tag("icon-concurso-02.png") %>
+						<h5>Baile</h5>
+					</div>
+	
+					<div class="preview-conf">
+						<%= image_tag("icon-concurso-03.png") %>
+						<h5>Audio</h5>
+					</div>
+	
+				</div>
+			</div>
+		</div>	
+		</div>
+</div>
+
+<div class="container-premios">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12" id="container-premios-foto">
+				<%= image_tag("premios.png") %>
+			</div>
+			<div class="col-md-6 col-md-offset-3">
+				<h1>PREMIOS</h1>
+				<ul class="list-group">
+				  <li class="list-group-item"><strong>Primer lugar</strong></li>
+				  <li class="list-group-item">Viaje doble a Korea (incluye $3000 USD para gastos)</li>
+				  <li class="list-group-item"><strong>Segundo lugar</strong></li>
+				  <li class="list-group-item">Sony Playstation 4 y iPad Air</li>
+				  <li class="list-group-item"><strong>Tercer lugar</strong></li>
+				  <li class="list-group-item">MacBook Air</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-black">
+	<div class="container" id="container-conf">
+		<div class="cont1">
+			<div class="row">
+				<div class="col-md-4" id="container-texto">
+					<h1>JUECES</font></h1>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+				</div>
+				<div class="col-md-7 col-md-offset-1" id="container-fotos">
+	
+					<a href="http://www.facebook.com/loremipsum" class="juez" target="_blank">
+					<div class="preview-conf">
+						<%= image_tag("conf-01.png") %>
+						<h5>Lorem Ipsum</h5>
+					</div>
+					</a>
+	
+					<a href="http://www.facebook.com/loremipsum" class="juez" target="_blank">
+					<div class="preview-conf" id="preview-ctr">
+						<%= image_tag("conf-02.png") %>
+						<h5>Lorem Ipsum</h5>
+					</div>
+					</a>
+	
+					<a href="http://www.facebook.com/loremipsum" class="juez" target="_blank">
+					<div class="preview-conf">
+						<%= image_tag("conf-03.png") %>
+						<h5>Lorem Ipsum</h5>
+					</div>
+					</a>
+	
+				</div>
+			</div>
+		</div>	
+		</div>
+</div>
+<div id="bases-container">
+	<h3>BASES DE CONCURSOS</h3>
+	<p>Descarga las bases para el concurso que desees</p>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-xs-12">
+				<button class="btn">Canto</button>
+			</div>	
+
+			<div class="col-md-4 col-xs-12">
+				<button class="btn">Baile</button>
+			</div>
+
+			<div class="col-md-4 col-xs-12">
+				<button class="btn">Audio</button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,3 +1,109 @@
 <% provide(:title, 'XVIII') %>
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div id="container-slider">
+	<ul class="bxslider" id="slider">
+	  <li><%= image_tag("slide-01.png") %></li>
+	  <li><%= image_tag("slide-01.png") %></li>
+	  <li><%= image_tag("slide-01.png") %></li>
+	  <li><%= image_tag("slide-01.png") %></li>
+	</ul>
+</div>
+
+<div class="container-white">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12" id="contenedor-experiencia">
+				<h3 class="col-md-8 col-md-offset-2">
+					<font style="font-weight:300;">LA</font> MAYOR <font style="color:#D4145A">EXPERIENCIA</font><font style="font-weight:300;">,</font><br>
+					<font style="font-weight:300;">CON EL</font> MEJOR <font style="color:#29ABE2;">CONTENIDO</font>
+				</h3>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-cover" id="auditorio">
+	Foto auditorio nacional.
+</div>
+
+<div class="container-black">
+	<div class="container" id="container-conf">
+		<div class="cont1">
+			<div class="row">
+				<div class="col-md-4" id="container-texto">
+					<h1>CONFERENCIAS <font style="font-weight:300;">MAGISTRALES</font></h1>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+				</div>
+				<div class="col-md-7 col-md-offset-1 hidden-xs hidden-sm" id="container-fotos">
+	
+					<div class="preview-conf">
+						<%= image_tag("conf-01.png") %>
+						<h5>Lorem Ipsum</h5>
+					</div>
+	
+					<div class="preview-conf" id="preview-ctr">
+						<%= image_tag("conf-02.png") %>
+						<h5>Lorem Ipsum</h5>
+					</div>
+	
+					<div class="preview-conf">
+						<%= image_tag("conf-03.png") %>
+						<h5>Lorem Ipsum</h5>
+					</div>
+	
+				</div>
+			</div>
+		</div>	
+		</div>
+</div>
+
+<div class="container-cover" id="auditorio-gente">
+	Foto auditorio nacional lleno.
+</div>
+
+<div class="container-pink">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<%= image_tag("concurso-01.png") %>
+			</div>
+			<div class="col-md-4 col-md-offset-3">
+				<h1>CONCURSO KPOP</h1>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+				<%= button_to "¡Inscríbete!", contest_path, :class => 'btn btn-default' %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-cover" id="concierto">
+	Foto auditorio nacional concierto.
+</div>
+
+<div class="container-black">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-xs-12" style="top:40px;">
+				<h1><font style="font-weight:300;">EVENTOS</font> SOCIALES</h1>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+			</div>
+			<a href="http://www.julesbasement.com/" target="_blank"><div class="col-md-4 hidden-xs hidden-sm" id="btn-jules">
+							Jules
+						</div></a>
+			<a href="https://www.facebook.com/pages/HYDE/238035130283?rf=339067399442904" target="_blank"><div class="col-md-4 hidden-xs hidden-sm" id="btn-hyde">
+							Hyde
+						</div></a>
+		</div></div>
+</div>
+
+<div class="container-ultimo">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<h4>CONQUISTA EL ESCENARIO.</h4>
+				<button class="btn">QUIERO SER PARTE</button>
+			</div>
+		</div></div>
+</div>
+
+
+

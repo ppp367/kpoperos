@@ -1,60 +1,60 @@
 <% provide(:title, 'Dashboard') %>
-<h1>Dashboard#home</h1>
 
-<h2>Bienvenido <%= current_user.username %></h2>
-<%= image_tag gravatar_image_url(current_user.email.gsub('spam', 'mdeering'), filetype: :png, rating: 'pg', size: 150, secure:false ) %>
-
-<div class="well span12">
-	<h3>Se han registrado un total de:</h3>
-		<% @vototal = 0 %>
-	  <% Group.all.each do |grupo| %>
-	    <% @vototal = @vototal + grupo.cached_votes_total %>	    
-	  <% end %>
-	  <h1><%= @vototal %> Votos</h1>
+<div id="dashboard-title">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-2 avatar-usuario"><%= image_tag gravatar_image_url(current_user.email.gsub('spam', 'mdeering'), filetype: :png, rating: 'pg', size: 150, secure:false ) %></div>
+			<h3 class="col-xs-4 nombre-usuario"><%= current_user.fullname %><small> (<%= current_user.username %>)</small></h3><br>
+			<div class="col-xs-3 col-xs-offset-3 votos-dashboard">
+			<% @vototal = 0 %>
+			<% Group.all.each do |grupo| %>
+			  <% @vototal = @vototal + grupo.cached_votes_total %>	    
+			<% end %>
+				<h4><%= @vototal %></h4>
+				<p>TOTAL DE VOTOS REGISTRADOS</p>
+			</div>
+		</div>
+	</div>
 </div>
-
-<div class="well span12">
-	<h3>Todos los usuarios</h3>
-	<ul>
-	  <% @users.each do |user| %>
-	    <li><%= user.username %> | <%= user.fullname %>| <%= user.email %> | <%= user.class.name %> | Miembro de:
-	    	<% Group.with_member(user).each do |banda| %>
-	    		<%= banda.name %> 
-	    	<% end %></li>
-	  <% end %>
-	</ul>
+<div id="dashboard-menu">
+	<div class="container">
+		<div class="row">
+			<ul class="nav nav-pills col-md-6 col-md-offset-3">
+			  <li class="active"><a href="#">Top concursantes</a></li>
+			  <li><%= link_to "Entrar a concurso", {:controller => "groups", action: "new" },
+		                                		method: :get %></li>
+			  <li><a href="/charges/new" id="comprar-carnet">Comprar carnet</a></li>
+			  <li><a href="/users/edit">Editar cuenta</a></li>
+			</ul>
+		</div>
+		<div class="row" id="comprar-menu">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="input-group">
+					<input type="number" min="1" class="form-control" placeholder="Cantidad de carnets">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button">Comprar</button>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+<div id="dashboard-content">
+	<div class="container">
+		<div class="row">
 
-<div class="well span5">
-	<h3>Todos los Invitados</h3>
-	<ul>
-	  <% @users.each do |user| %>
-	  	<% if user.type == nil %>
-	    <li><%= user.username %> | <%= user.email %> | <%= user.class.name %> </li>
-	    <% end %>
-	  <% end %>
-	</ul>
-</div>
+			<% Group.all.order('cached_votes_total desc').each do |grupo| %>
 
-<div class="well span5">
-	<h3>Todos los Concursantes</h3>
-	<ul>
-	  <% @users.each do |user| %>
-	    <% if user.type == "Concursante" %>
-	    	<li><%= user.username %> | <%= user.email %> | <%= user.class.name %> </li>
-	    <% end %>
-	  <% end %>
-	</ul>
-</div>
+				<a href="/banda/<%= grupo.name %>" class="tile-concursante col-xs-4 col-md-2 thumbnail">
+					<div id="tile-avatar"><%= image_tag grupo.avatar.url.to_s %></div>
+					<div class="caption">
+						<h4 class="tile-nombre"><%= grupo.name %></h4>
+						<p class="tile-votos"><%= grupo.cached_votes_total %> votos</p>
+					</div>
+				</a>
 
-<div class="span12">
-	<% if current_user.type == "Concursante" %>
-		<h4>Eres Concursante!</h4>
-		<%= link_to "Tu perfil", "concursantes/#{current_user.username}" %>
+			<% end %>
 
-	<% else %>
-		<h4>¿Quieres entrar al Concurso?</h4>
-		<%= button_to "Quiero entrar al Concurso", {:controller => "groups", action: "new" },
-		                                		method: :get %>
-	<% end %>
+		</div>
+	</div>
 </div>
