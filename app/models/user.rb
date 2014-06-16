@@ -12,7 +12,8 @@ class User < ActiveRecord::Base
   	acts_as_named_group_member
   	acts_as_voter
 
-
+  	mount_uploader :avatar, AvatarUploader
+  	
 	extend FriendlyId
 	friendly_id :username, use: :slugged
 	

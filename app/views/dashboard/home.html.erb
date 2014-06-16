@@ -1,6 +1,8 @@
 <% provide(:title, 'Dashboard') %>
 <h1>Dashboard#home</h1>
-<p>Find me in app/views/dashboard/home.html.erb</p>
+
+<h2>Bienvenido <%= current_user.username %></h2>
+<%= image_tag user.image_url(:thumb).to_s %>
 
 <div class="well span12">
 	<h3>Se han registrado un total de:</h3>

@@ -24,8 +24,8 @@ en:
 
 errors:
   messages:
-    carrierwave_processing_error: "Cannot resize image."
-    carrierwave_integrity_error: "Not an image."
-    carrierwave_download_error: "Couldn't download image."
-    extension_white_list_error: "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}"
-    extension_black_list_error: "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}"
+    carrierwave_processing_error: "La imagen no se pudo redimensionar."
+    carrierwave_integrity_error: "No haz subido una imagen."
+    carrierwave_download_error: "No se pudo descargar la imagen"
+    extension_white_list_error: "En Kpoperos no admitimos archivos %{extension}, preferimos: %{allowed_types}"
+    extension_black_list_error: "En Kpoperos no admitimos archivos %{extension}, Archivos prohibidos: %{prohibited_types}"

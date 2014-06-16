@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140616035223) do
+ActiveRecord::Schema.define(version: 20140616043352) do
 
   create_table "comments", force: true do |t|
     t.string   "title",            limit: 50, default: ""
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20140616035223) do
     t.integer "cached_votes_down",     default: 0
     t.integer "cached_weighted_score", default: 0
     t.integer "cached_weighted_total", default: 0
+    t.string  "avatar"
   end
 
   add_index "groups", ["cached_votes_down"], name: "index_groups_on_cached_votes_down"
@@ -92,6 +93,7 @@ ActiveRecord::Schema.define(version: 20140616035223) do
     t.string   "slug"
     t.string   "type"
     t.string   "fullname"
+    t.string   "avatar"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
