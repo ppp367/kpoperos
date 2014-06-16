@@ -49,6 +49,8 @@ gem 'acts_as_votable', '~> 0.10.0'
 
 gem 'bxslider-rails'
 
+gem 'gravatar_image_tag'
+
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 

@@ -2,7 +2,7 @@
 <h1>Dashboard#home</h1>
 
 <h2>Bienvenido <%= current_user.username %></h2>
-<%= image_tag current_user.avatar.url.to_s %>
+<%= image_tag gravatar_image_url(current_user.email.gsub('spam', 'mdeering'), filetype: :png, rating: 'pg', size: 150, secure:false ) %>
 
 <div class="well span12">
 	<h3>Se han registrado un total de:</h3>
