@@ -5,6 +5,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   #include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
+  include CarrierWave::ImageSorcery
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -16,9 +17,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  def cache_dir
-    "#{Rails.root}/tmp/uploads"
-  end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
@@ -35,11 +33,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
 
   # Process files as they are uploaded:
-  #process :scale => [200, 200]
+  process :resize_to_fit => [200, 200]
   #
-  def scale(width, height)
+  # def scale(width, height)
   #  do something
-  end
+  #end
 
   #process :convert => 'png'
 
@@ -47,9 +45,9 @@ class AvatarUploader < CarrierWave::Uploader::Base
     super.chomp(File.extname(super)) + '.png' if original_filename.present?
   end
   # Create different versions of your uploaded files:
-   #version :thumb do
-    #process :resize_to_fit => [100, 100]
-   #end
+   version :thumb do
+    process :resize_to_fit => [100, 100]
+   end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

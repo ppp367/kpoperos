@@ -19,6 +19,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem "fog", "~> 1.3.1"
 
+gem 'carrierwave-imagesorcery'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

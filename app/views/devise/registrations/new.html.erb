@@ -18,11 +18,6 @@
   <div><%= f.label "Confirmacion de Contraseña" %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-  <div><%= f.label :avatar %>
-    <%= f.file_field :avatar %></div>
-
-    <%= f.hidden_field :avatar_cache %>
-
   <div><%= f.submit "Registrar" %></div>
 <% end %>
 
