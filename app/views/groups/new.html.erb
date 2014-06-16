@@ -1,8 +1,17 @@
-<%= form_for :group do |f| %>
-  <div><%= f.label :name %>
+<h1>Registra tu Banda!</h1>
+<%= form_for :group, :html => {:method => :put, :multipart => true} do |f| %>
+  <%= f.label "Nombre de la banda" %>
   <%= f.text_field :name, :autofocus => true %>
-</div>
- 
+
+  <%= f.label "Ubicación" %>
+  <%= f.text_field :ubicacion, :autofocus => true %>
+
+  <%= f.label "About" %>
+  <%= f.text_area :about, :autofocus => true %>
+
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar %>
+
   <p>
     <%= f.submit %>
   </p>

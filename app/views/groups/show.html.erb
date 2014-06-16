@@ -1,6 +1,11 @@
 <% provide(:title, @group.name) %>
 
-<h1>Perfil de BANDA <%= @group.name %>!</h1>
+<h1>Perfil de BANDA <%= @group.name %>! <small><%= @group.ubicacion %></small></h1>
+
+<%= image_tag @group.avatar.url.to_s %>
+
+<h2>About</h2>
+<p><%= @group.about %></p>
 
 <h2>Tiene <%= @group.cached_votes_total %> Votos!</h2>
 <% if current_user.voted_for?(@group) %>
@@ -20,10 +25,6 @@
 
 <h2>La vista esta en views/groups/show.html.erb</h2>
 
-<% Group.with_member(current_user).each do |band| %>
-	<h3> Eres miembro de <%= band.name %> </h3>
-<% end %>
-
 <% if current_user.in_group?(@group) %>
 	<h1>Agrega a tus compas al grupo</h1>
 	<%= form_for :user_to_add, :url => url_for(:controller => 'groups', :action => 'add_member') do |f| %>
@@ -31,10 +32,8 @@
 	  <%= f.text_field :username, :autofocus => true %>
 	  <%= hidden_field_tag :grupo, @group.name %>
 	</div>
-	 
 	  <p>
 	    <%= f.submit %>
 	  </p>
 	<% end %>
-
 <%end%>
