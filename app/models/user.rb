@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
 	validates :username, :presence => true, :uniqueness => true
-	validates :fullname, :presence => true
 
 	acts_as_group_member
   	acts_as_named_group_member

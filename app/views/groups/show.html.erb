@@ -18,7 +18,7 @@
 				<% else %>
 					<button class="btn col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-4"><%= link_to "Vota por #{@group.name}", {:controller => :groups, :action => :votar, :grupo => @group}, {:method => :post } %></button>
 				<% end %>
-			<% end% >
+			<% end %>
 
 		</div>
 	</div>
@@ -28,6 +28,8 @@
 	<div class="group-members">
 		<div class="container">
 			<div class="row">
+				<br>
+				<%= bootstrap_flash %>
 				<h5>INTEGRANTES</h5>
 				<% User.in_group(@group).each do |user| %>
 				<a class="tile-member col-xs-4 col-md-2 thumbnail">
@@ -51,7 +53,7 @@
 						    <%= f.submit %>
 						  </p>
 						<% end %>
-					<%end%>
+					<% end %>
 				</div>
 			<% end %>
 		</div>
