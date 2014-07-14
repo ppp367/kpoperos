@@ -1,6 +1,7 @@
 class Concursante < User
 
 	self.inheritance_column = :type
+	mount_uploader :avatar, AvatarUploader
 
 	extend FriendlyId
 	friendly_id :username, use: :slugged

@@ -33,7 +33,7 @@
 				<h5>INTEGRANTES</h5>
 				<% User.in_group(@group).each do |user| %>
 				<a class="tile-member col-xs-4 col-md-2 thumbnail">
-					<div id="member-avatar"><%= image_tag gravatar_image_url(user.email.gsub('spam', 'mdeering'), filetype: :png, rating: 'pg', size: 150, secure:false ) %></div>
+					<div id="member-avatar"><%= image_tag user.avatar.url.to_s %></div>
 				<div class="caption">
 					<h4 class="member-nombre"><%= user.username %></h4>
 				</div>

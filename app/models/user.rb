@@ -21,6 +21,7 @@ end
 class Concursante < User
 
 	self.inheritance_column = :type
+	mount_uploader :avatar, AvatarUploader
 
 	#has_one :group, through: :group_membership
 

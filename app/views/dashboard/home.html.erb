@@ -3,7 +3,7 @@
 <div id="dashboard-title">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-2 avatar-usuario"><%= image_tag gravatar_image_url(current_user.email.gsub('spam', 'mdeering'), filetype: :png, rating: 'pg', size: 150, secure:false ) %></div>
+			<div class="col-xs-2 avatar-usuario"> <%= image_tag current_user.avatar.url.to_s %></div>
 			<h3 class="col-xs-4 nombre-usuario"><%= current_user.fullname %><small> (<%= current_user.username %>)</small></h3><br>
 			<div class="col-xs-3 col-xs-offset-3 votos-dashboard">
 			<% @vototal = 0 %>

@@ -27,6 +27,8 @@ Kpoperos::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  config.serve_static_assets = true
+
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   config.i18n.available_locales = :es , :en , :ko
@@ -35,6 +37,8 @@ Kpoperos::Application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default :charset => "utf-8"
+
+
 
   config.action_mailer.smtp_settings = {
     :address   => "smtp.mandrillapp.com",
